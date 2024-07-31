@@ -2,13 +2,13 @@ use std::env;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    if &args[1] == "help" {
-        println!("Usage: {} [temperature]", args[0]);
-        println!("Enter a temperature value in Celsius or Fahrenheit to convert.");
-        return;
-    } else if args.len() != 2 {
+    if args.len() != 2 {
         println!("Usage: {} [temperature]", args[0]);
         println!("Enter exactly one argument (a temperature) for conversion.");
+        return;
+    } else if &args[1] == "help" {
+        println!("Usage: {} [temperature]", args[0]);
+        println!("Enter a temperature value in Celsius or Fahrenheit to convert.");
         return;
     }
 
